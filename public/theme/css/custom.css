@@ -1,0 +1,166 @@
+.tg-bannerholder .feature-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #252525;
+    z-index: 99;
+    padding: 10px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+}
+
+.feature-block .holder {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+}
+
+.feature-block ul {
+    text-align: center;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 1299px) {
+    .feature-block ul {
+        min-width: 1210px;
+        overflow: visible;
+    }
+}
+
+.feature-block li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -.25em;
+    padding: 5px;
+    position: relative;
+    width: 12.5%;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.feature-block li:first-child:before {
+    display: none;
+}
+
+.feature-block li:before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    background: #000;
+    width: 1px;
+}
+
+.feature-block li span:nth-child(2) {
+    font-size: 12px;
+}
+
+.feature-block li a,
+.feature-block li span {
+    display: block;
+}
+
+.feature-block li a {
+    height: 100%;
+    color: #9d9d9d;
+}
+
+.feature-block li a:hover {
+    color: #b0a377;
+}
+
+.feature-block li a .feature-img {
+    margin: 0 auto 10px;
+}
+
+.wp-area {
+    z-index: 999;
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    width: 45px;
+    height: 45px;
+    display: block;
+}
+
+.wp-area .fa {
+    font-size: 50px;
+}
+
+.instagramFeed {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.instagramFeed .instaPostItem {
+    flex-basis: 33.3333%;
+    max-width: 33.3333%;
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.instagramFeed .instaPostItem .instaOverlay {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #ff7550ba;
+    opacity: 0;
+    transition: all .3s linear;
+}
+
+.instagramFeed .instaPostItem .instaOverlay .fa {
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 20px
+}
+
+.instagramFeed .instaPostItem:hover .instaOverlay {
+    opacity: 1;
+}
+
+#momentsTours .tg-trendingtrip .tg-hover span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s linear;
+}
+
+#momentsTours .tg-trendingtrip:hover .tg-hover span {
+    opacity: 1;
+}
+
+#momentsTours .tg-listing .tg-populartour,
+.tg-listing .tg-trendingtrip {
+    padding: 30px 0 0;
+}
+
+.tg-logo a {
+    max-width: 200px;
+}
+
+#homeBlog .tg-description p {
+    max-height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#callToMail .tg-calltoaction h2 {
+    line-height: 50px;
+}
+
+.item.tg-populartour .tg-description p {
+    max-height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
