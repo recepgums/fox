@@ -2,11 +2,11 @@
   <vs-tabs  :position="isSmallerScreen ? 'top' : 'top'" class="tabs-shadow-none" id="profile-tabs" :key="isSmallerScreen">
 
     <!-- GENERAL -->
-    <vs-tab icon-pack="feather" icon="icon-user" :label="!isSmallerScreen ? $t('Account') : ''">
+  <!--  <vs-tab icon-pack="feather" icon="icon-user" :label="!isSmallerScreen ? $t('Account') : ''">
       <div class="tab-general md:ml-4 md:mt-10 mt-4 ml-0">
         <user-settings-general />
       </div>
-    </vs-tab>
+    </vs-tab>-->
 
      <vs-tab icon-pack="feather" icon="icon-lock" :label="!isSmallerScreen ? $t('PasswordManagement') : ''">
       <div class="tab-change-pwd md:ml-4 md:mt-10 mt-4 ml-0">
@@ -14,7 +14,7 @@
       </div>
     </vs-tab>
 
-     <vs-tab icon-pack="feather"  icon="icon-info" :label="!isSmallerScreen ? $t('Info') : ''">
+    <!-- <vs-tab icon-pack="feather"  icon="icon-info" :label="!isSmallerScreen ? $t('Info') : ''">
       <div class="tab-info md:ml-4 md:mt-10 mt-4 ml-0">
         <user-settings-info
           v-if="upgradePackage_remaining_days !== 'NoSubscripton'"
@@ -24,7 +24,7 @@
           <user-settings-get-premium v-else />
 
       </div>
-    </vs-tab>
+    </vs-tab>-->
     <!-- <vs-tab icon-pack="feather" icon="icon-octagon" :label="!isSmallerScreen ? $t('CV_Education_Work') : ''">
       <div class="tab-info md:ml-4 md:mt-10 mt-4 ml-0">
         <user-settings-cv-edu

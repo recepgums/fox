@@ -5,6 +5,7 @@
     $subscribeDiscount = Helper::findCustomData('subscribeDiscount');
     $about = Helper::findCustomData('about');
     $fourImages = Helper::findCustomData('fourImages');
+    $postHomePage = \App\Models\Post::where('type','post')->orderBy('created_at','desc')->get();
 @endphp
 <div class="tg-bannerholder">
     <div id="tg-homeslider" class="tg-homeslider owl-carousel tg-haslayout">
@@ -12,7 +13,7 @@
             @foreach($slider as $slide)
                 <figure class="item"
                         data-vide-options="position: 0% 50%">
-                    <img src="theme/images/slider/img-01.jpg" alt="">
+                    <img src="{{substr($slide['image'],1)}}" alt="">
 
                 </figure>
                 {{--<figure class="item" data-vide-bg="poster: {{substr($slide['image'],1)}}"
@@ -26,8 +27,8 @@
                 @isset($icons)
                     @foreach($icons as $icon)
                         <li>
-                            <a href="javascript:void(0);">
-                                @isset($icon['image']) <span class="feature-img"><img src="{{$icon['image']}}"
+                            <a href="#">
+                                @isset($icon['image']) <span class="feature-img"><img style="height: 20%;width: 20%;" src="{{$icon['image']}}"
                                                                                       alt=""></span>@endisset
                                 @isset($icon['name']) <span class="desc">{{$icon['name']}}</span>@endisset
                             </a>
@@ -109,7 +110,7 @@
     <!--************************************
             Popular Tour Start
     *************************************-->
-    @isset($postsHomePage)
+    @isset($postHomePage)
         <section id="homeBlog" class="tg-parallax" data-appear-top-offset="600" data-parallax="scroll"
                  data-image-src="images/parallax/bgparallax-01.jpg">
             <div class="tg-sectionspace tg-haslayout">
@@ -122,8 +123,8 @@
                             </div>
                             <div id="tg-populartoursslider"
                                  class="tg-populartoursslider tg-populartours owl-carousel">
-                                @isset($postsHomePage)
-                                    @foreach($postsHomePage as $post)
+                                @isset($postHomePage)
+                                    @foreach($postHomePage as $post)
                                         <div class="item tg-populartour">
                                             <figure>
                                                 <a href="{{route('post.find',$post->slug)}}"><img
@@ -134,12 +135,13 @@
                                                 <div class="tg-postcontenthead">
                                                     <div class="tg-author">
                                                         <a href="javascript:void(0);"><img
-                                                                src="{{$post->thumbnail}}"
+                                                                src="{{$setting['logo']->value}}"
+                                                                style="height: 30px;width: 30px"
                                                                 alt="image description"></a>
-                                                        <span>FOX DMC</span>
+                                                        <span>{{$setting['site_name']->value}}</span>
                                                     </div>
                                                     <time class="tg-date"
-                                                          datetime="12-06-2020">{{$post->created_at}}</time>
+                                                          datetime="12-06-2020">{{\Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->format('d-m-Y')}}</time>
                                                 </div>
                                                 <br>
                                                 <br>
@@ -149,10 +151,10 @@
                                                     </h3>
                                                 </div>
                                                 <div class="tg-description">
-                                                    {!! $post->content !!}}
-                                                    <a class="tg-btnreadmore" href="{{route('post.find',$post->slug)}}">Read
-                                                        More</a>
+                                                    {!! substr($post->content,0,150) !!}
                                                 </div>
+                                                <a class="tg-btnreadmore" href="{{route('post.find',$post->slug)}}">Read
+                                                    More</a>
                                             </div>
                                         </div>
                                     @endforeach

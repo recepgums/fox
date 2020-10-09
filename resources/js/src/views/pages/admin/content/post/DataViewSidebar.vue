@@ -37,8 +37,8 @@
                                             <span class="text-danger text-sm" v-show="errors.has('content')">{{ errors.first('content') ? 'İçerik Gerekli' : ''}}</span>
                                         </div>
 
-                                        <span>{{$t('tags')}}</span>
-                                        <v-select taggable push-tags multiple :closeOnSelect="false" v-model="tags"  :dir="$vs.rtl ? 'rtl' : 'ltr'" /><br>
+                                       <!-- <span>{{$t('tags')}}</span>
+                                        <v-select taggable push-tags multiple :closeOnSelect="false" v-model="tags"  :dir="$vs.rtl ? 'rtl' : 'ltr'" /><br>-->
 
 
                                         <!--  CATEGORY -->
@@ -141,7 +141,7 @@
                     this.status = status
                     this.thumbnail = thumbnail
                     this.category_id = Number(JSON.stringify(category.id))
-                    this.tags = JSON.parse(this.data.data.options).tags
+                   /* this.tags = JSON.parse(this.data.data.options).tags*/
                     //this.initValues()
                 }
                 // Object.entries(this.data).length === 0 ? this.initValues() : { this.id, this.title, this.category_id, this.dataOrder_status, this.dataUsage_amount } = JSON.parse(JSON.stringify(this.data))
@@ -150,7 +150,7 @@
         data () {
             return {
                 type: 'post',
-                tags: [],
+                /*tags: [],*/
                 isMounted: false,
                 thumbnail :null,
                 video :null,
@@ -244,7 +244,7 @@
                             content:this.content,
                             seo_title:this.seo_title,
                             seo_description:this.seo_description,
-                            options: {tags:this.tags},
+                           /* options: {tags:this.tags},*/
                             thumbnail: this.thumbnail,
                             status: this.status,
                             type: this.type

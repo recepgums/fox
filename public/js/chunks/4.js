@@ -192,7 +192,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { _babel_runtime_cor
         this.status = status;
         this.thumbnail = thumbnail;
         this.category_id = Number(_babel_runtime_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_1___default()(category.id));
-        this.tags = JSON.parse(this.data.data.options).tags; //this.initValues()
+        /* this.tags = JSON.parse(this.data.data.options).tags*/
+        //this.initValues()
       } // Object.entries(this.data).length === 0 ? this.initValues() : { this.id, this.title, this.category_id, this.dataOrder_status, this.dataUsage_amount } = JSON.parse(JSON.stringify(this.data))
 
     }
@@ -202,7 +203,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { _babel_runtime_cor
 
     return _ref = {
       type: 'post',
-      tags: [],
+
+      /*tags: [],*/
       isMounted: false,
       thumbnail: null,
       video: null,
@@ -294,9 +296,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { _babel_runtime_cor
             content: _this.content,
             seo_title: _this.seo_title,
             seo_description: _this.seo_description,
-            options: {
-              tags: _this.tags
-            },
+
+            /* options: {tags:this.tags},*/
             thumbnail: _this.thumbnail,
             status: _this.status,
             type: _this.type
@@ -645,26 +646,6 @@ var render = function() {
                                     ],
                                     1
                                   ),
-                                  _vm._v(" "),
-                                  _c("span", [_vm._v(_vm._s(_vm.$t("tags")))]),
-                                  _vm._v(" "),
-                                  _c("v-select", {
-                                    attrs: {
-                                      taggable: "",
-                                      "push-tags": "",
-                                      multiple: "",
-                                      closeOnSelect: false,
-                                      dir: _vm.$vs.rtl ? "rtl" : "ltr"
-                                    },
-                                    model: {
-                                      value: _vm.tags,
-                                      callback: function($$v) {
-                                        _vm.tags = $$v
-                                      },
-                                      expression: "tags"
-                                    }
-                                  }),
-                                  _c("br"),
                                   _vm._v(" "),
                                   _c(
                                     "vs-select",

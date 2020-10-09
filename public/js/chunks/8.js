@@ -2017,25 +2017,6 @@ var render = function() {
         {
           attrs: {
             "icon-pack": "feather",
-            icon: "icon-user",
-            label: !_vm.isSmallerScreen ? _vm.$t("Account") : ""
-          }
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "tab-general md:ml-4 md:mt-10 mt-4 ml-0" },
-            [_c("user-settings-general")],
-            1
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "vs-tab",
-        {
-          attrs: {
-            "icon-pack": "feather",
             icon: "icon-lock",
             label: !_vm.isSmallerScreen ? _vm.$t("PasswordManagement") : ""
           }
@@ -2045,29 +2026,6 @@ var render = function() {
             "div",
             { staticClass: "tab-change-pwd md:ml-4 md:mt-10 mt-4 ml-0" },
             [_c("user-settings-change-password")],
-            1
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "vs-tab",
-        {
-          attrs: {
-            "icon-pack": "feather",
-            icon: "icon-info",
-            label: !_vm.isSmallerScreen ? _vm.$t("Info") : ""
-          }
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "tab-info md:ml-4 md:mt-10 mt-4 ml-0" },
-            [
-              _vm.upgradePackage_remaining_days !== "NoSubscripton"
-                ? _c("user-settings-info", { attrs: { user: _vm.activeUser } })
-                : _c("user-settings-get-premium")
-            ],
             1
           )
         ]

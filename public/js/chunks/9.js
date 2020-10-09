@@ -1637,22 +1637,9 @@ var render = function() {
                     _c(
                       "div",
                       [
-                        _c("input", {
-                          ref: "AboutUSMembers" + index,
-                          refInFor: true,
-                          staticClass: "hidden",
-                          attrs: { type: "file", accept: "image/*" },
-                          on: {
-                            change: function($event) {
-                              return _vm.sliderUpload(
-                                $event,
-                                index,
-                                "AboutUSMembers"
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
+                        _vm._v(
+                          '"hidden" :ref="\'AboutUSMembers\'+index" @change="sliderUpload($event,index,\'AboutUSMembers\')" accept="image/*">\n                          '
+                        ),
                         _c(
                           "vs-button",
                           {

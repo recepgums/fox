@@ -52,9 +52,11 @@ $imagesAndContents = Helper::findCustomData('AboutUSMembers');
             <div class="row">
                 @isset($imagesAndContents[0]['image'])
                     <figure
-                        data-vide-bg="poster: {{$imagesAndContents[0]['image']}}"
+                        data-vide-bg="poster: {{substr($imagesAndContents[0]['image'],1)}}"
                         data-vide-options="position: 0% 50%"
-                    ></figure>
+                    >
+                        <img src="{{substr($imagesAndContents[0]['image'],1)}}" alt="">
+                    </figure>
                 @endisset
             </div>
         </div>
@@ -71,9 +73,12 @@ $imagesAndContents = Helper::findCustomData('AboutUSMembers');
             <div class="row">
                 @isset($imagesAndContents[1]['image'])
                     <figure
-                        data-vide-bg="poster: {{$imagesAndContents[1]['image']}}"
+                        data-vide-bg="poster: {{substr($imagesAndContents[1]['image'],1)}}"
                         data-vide-options="position: 0% 50%"
-                    ></figure>
+                    >
+                        <img src="{{substr($imagesAndContents[1]['image'],1)}}" alt="">
+
+                    </figure>
                 @endisset
             </div>
         </div>
@@ -112,7 +117,11 @@ $imagesAndContents = Helper::findCustomData('AboutUSMembers');
                         <figure
                             data-vide-bg="poster: {{$item['image']}}"
                             data-vide-options="position: 0% 50%"
-                        ></figure>
+                        >
+                            <img src="{{substr($imagesAndContents[2]['image'],1)}}" alt="">
+
+
+                        </figure>
                         @endisset
                     </div>
                 </div>
