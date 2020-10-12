@@ -41,7 +41,7 @@
                     ></span>
                     <h2>Phone</h2>
                     <div class="tg-description">
-                      <a href="tel:+90 216 550 1">+90 216 550 1</a>
+                      @isset($setting['phone']->value)<a href="tel:{{$setting['phone']->value}}">{{$setting['phone']->value}}</a>@endisset
                     </div>
                   </li>
                   <li>
@@ -49,10 +49,10 @@
                       ><i class="fa fa-map-marker"></i
                     ></span>
                     <h2>Visit Our Location</h2>
-                    <address>
-                      Caferaga Mh, General Asim Gunduz Cad. NO:80/8 Kadikoy -
-                      Istanbul/TURKEY
+                    @isset($setting['address']->value)<address>
+                      {{$setting['address']->value}}
                     </address>
+                  @endisset
                     <strong
                       ><a href="javascript:void(0);">Get Directions</a></strong
                     >
@@ -63,7 +63,7 @@
                     ></span>
                     <h2>Mail</h2>
                     <div class="tg-description">
-                      <a href="mailto:info@foxdmc.com">info@foxdmc.com</a>
+                      @isset($setting['email']->value)<a href="mailto:{{$setting['email']->value}}">{{$setting['email']->value}}</a>@endisset
                     </div>
                   </li>
                 </ul>

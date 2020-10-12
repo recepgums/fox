@@ -109,7 +109,7 @@
                                 <fieldset>
                                     <input type="hidden" name="subs" value="New subscribe">
                                     <input type="email" name="email" class="form-control"
-                                           placeholder="Your Email">d
+                                           placeholder="Your Email">
                                     <button onclick="document.getElementById('myform3').submit()"><img
                                             src="{{asset('theme/images/icons/icon-08.png')}}"
                                             alt="image destinations"></button>
