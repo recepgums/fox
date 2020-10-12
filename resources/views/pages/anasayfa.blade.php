@@ -87,6 +87,7 @@
                                         </figcaption>
                                     </figure>
                                 </div>
+                                @if(isset($fourImages[$key+1]))
                                 <div class="tg-topdestination">
                                     <figure>
                                         <a href="{{$fourImages[$key+1]['url']}}" class="tg-btnviewall">View All Tours</a>
@@ -97,6 +98,7 @@
                                         </figcaption>
                                     </figure>
                                 </div>
+                                    @endisset
                             </div>
                         @else
                             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
