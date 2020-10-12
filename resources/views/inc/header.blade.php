@@ -91,23 +91,17 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="tg-addnavcartsearch">
+                    <div class="tg-addnavcartsearch" style="position: relative; right: 25px;">
                         <nav class="tg-addnav">
                             <ul>
                                 <li><a href="{{url('aboutus')}}">about</a></li>
                                 <li><a href="{{url('contactus')}}">contact</a></li>
                             </ul>
                         </nav>
-                        <nav class="tg-cartsearch">
-                            <ul>
-                                <li><a href="#tg-search"><img src="{{asset('theme/images/icons/icon-04.png')}}"
-                                                              alt="image destinations"></a></li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
                 <div class="tg-navigationarea tg-headerfixed">
-                    <strong class="tg-logo"><a href="{{url('anasayfa')}}"><img src="{{asset('theme/images/logo.png')}}"
+                    <strong class="tg-logo"><a href="{{url('anasayfa')}}"><img  style="height: 20%;width: 20%" src="{{$setting['logo']->value}}"
                                                                     alt="company logo here"></a></strong>
                     <div class="tg-socialsignin">
                         <ul class="tg-socialicons">

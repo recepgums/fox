@@ -39,18 +39,21 @@
                                 <div class="col-md-4">
                                     <div class="item tg-populartour">
                                         <figure>
-                                            <a href="{{route('post.find',$post->slug)}}"><img  src="{{asset($post->thumbnail)}}"
-                                                                      alt="image destinations"></a>
+                                            <a href="{{route('post.find',$post->slug)}}"><img
+                                                    src="{{$post->thumbnail}}"
+                                                    alt="image destinations"></a>
                                         </figure>
                                         <div class="tg-populartourcontent">
                                             <div class="tg-postcontenthead">
                                                 <div class="tg-author">
                                                     <a href="javascript:void(0);"><img
                                                             src="{{$setting['logo']->value}}"
+                                                            style="height: 30px;width: 30px"
                                                             alt="image description"></a>
                                                     <span>{{$setting['site_name']->value}}</span>
                                                 </div>
-                                                <time class="tg-date" datetime="12-06-2020">{{$post->created_at}}</time>
+                                                <time class="tg-date"
+                                                      datetime="12-06-2020">{{\Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->format('d-m-Y')}}</time>
                                             </div>
                                             <br>
                                             <br>
@@ -60,19 +63,19 @@
                                                 </h3>
                                             </div>
                                             <div class="tg-description">
-                                                {!! substr($post->content,0,100) !!}
-                                                <br>
-                                                <a class="tg-btnreadmore" href="{{route('post.find',$post->slug)}}">Read More</a>
+                                                {!! substr($post->content,0,150) !!}
                                             </div>
+                                            <a class="tg-btnreadmore" href="{{route('post.find',$post->slug)}}">Read
+                                                More</a>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                        @endisset
-                    </div>
+                    @endforeach
+                    @endisset
                 </div>
             </div>
         </div>
+    </div>
 </main>
 <!--************************************
         Main End

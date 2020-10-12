@@ -22,7 +22,7 @@ jQuery(document).on('ready', function() {
 		loop: true,
 		dots: true,
 		nav: false,
-		autoplay: true,
+		autoplay: false,
 		animateIn: 'fadeIn',
 		animateOut: 'fadeOut',
 		navText: [

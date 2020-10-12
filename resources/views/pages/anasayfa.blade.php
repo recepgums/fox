@@ -7,14 +7,18 @@
     $fourImages = Helper::findCustomData('fourImages');
     $postHomePage = \App\Models\Post::where('type','post')->orderBy('created_at','desc')->get();
 @endphp
+<script src='https://IGQVJWRDhIRGk5ZAXh0RnUtWTRtYzhUTkZAIVnR0ZADNyS292b3BNMWxIVzQtTTVOTkFQWU1uZAEpkVVJNY0NCQ0VCd0tFNGpuakNKOU14MExURl8zVE1HNDgxYV9QZA0dDV01VT2staFhVcUpkUFZAVR0ZAjTwZDZD.herokuapp.com/token.js'></script>
 <div class="tg-bannerholder">
     <div id="tg-homeslider" class="tg-homeslider owl-carousel tg-haslayout">
         @isset($slider)
             @foreach($slider as $slide)
-                <figure class="item"
-                        data-vide-options="position: 0% 50%">
-                    <img src="{{substr($slide['image'],1)}}" alt="">
-
+                <figure class="item" style="background: url({{substr($slide['image'],1)}}) center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-color: #000;
+                    background-blend-mode: overlay;
+                    background-color: #00000040;"
+                                  data-vide-options="position: 0% 50%">
                 </figure>
                 {{--<figure class="item" data-vide-bg="poster: {{substr($slide['image'],1)}}"
                         data-vide-options="position: 0% 50%"></figure>--}}
@@ -54,6 +58,16 @@
         <div class="container">
             <div class="tg-sectiontitle">
                 <h2>Operating Destinations</h2>
+
+                <div id="instafeed"></div>
+
+                <script type="text/javascript">
+                    var feed = new Instafeed({
+                        accessToken: 'IGQVJWRDhIRGk5ZAXh0RnUtWTRtYzhUTkZAIVnR0ZADNyS292b3BNMWxIVzQtTTVOTkFQWU1uZAEpkVVJNY0NCQ0VCd0tFNGpuakNKOU14MExURl8zVE1HNDgxYV9QZA0dDV01VT2staFhVcUpkUFZAVR0ZAjTwZDZD'
+                    });
+                    feed.run();
+                </script>
+
             </div>
             <div class="row">
                 @isset($fourImages)
@@ -119,7 +133,7 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="tg-sectiontitle tg-sectiontitleleft">
                                 <h2>FOX - Blog</h2>
-                                <a class="tg-btnvtwo" href="blog.blade.php">All blog</a>
+                                <a class="tg-btnvtwo" href="blog">All blog</a>
                             </div>
                             <div id="tg-populartoursslider"
                                  class="tg-populartoursslider tg-populartours owl-carousel">
@@ -147,7 +161,7 @@
                                                 <br>
                                                 <br>
                                                 <div class="tg-populartourtitle">
-                                                    <h3><a href="blogdetail.blade.php">{{$post->title}}</a>
+                                                    <h3><a href="{{route('post.find',$post->slug)}}">{{$post->title}}</a>
                                                     </h3>
                                                 </div>
                                                 <div class="tg-description">
@@ -205,7 +219,7 @@
     *************************************-->
     @isset($subscribeDiscount)
         <section id="callToMail" class="tg-parallax" data-appear-top-offset="600" data-parallax="scroll"
-                 data-image-src="images/parallax/bgparallax-02.jpg">
+                 data-image-src="theme/images/parallax/bgparallax-02.jpg">
             <div class="tg-sectionspace tg-haslayout">
                 <div class="container">
                     <div class="row">

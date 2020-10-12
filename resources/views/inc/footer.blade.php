@@ -109,7 +109,7 @@
                                 <fieldset>
                                     <input type="hidden" name="subs" value="New subscribe">
                                     <input type="email" name="email" class="form-control"
-                                           placeholder="Your Email">
+                                           placeholder="Your Email">d
                                     <button onclick="document.getElementById('myform3').submit()"><img
                                             src="{{asset('theme/images/icons/icon-08.png')}}"
                                             alt="image destinations"></button>
@@ -141,34 +141,3 @@
     <a target="_blank" href="https://wa.me/@isset($setting['phone']->value){{$setting['phone']->value}}@endisset"><i
             class="fa fa-whatsapp"></i></a>
 </div>
-
-<?php
-/*$user = 'recepgums';
-// you can get your token from here: https://instagram.pixelunion.net/
-$access_token = 'IGQVJVOE9yeUhZAYUZAUUEI3QjFFMzV6azJ3dTVZASi1ENWdMU0tlTk1zYlhIN3V1MHQxcXNQYUN2RW5UUGk5NlRiUVFCN0o1azkzUGhVWkcwZA2h3UUwwS01SaVJmaFd2RjN2bFRZAdU5FM0NZAOU03bTk4TwZDZD';
-$photo_count = 6;// you can choose the amount. 20 is the max per query
-
-$json_link = "https://api.instagram.com/v1/users/self/media/recent/?";
-$json_link .="access_token={$access_token}&count={$photo_count}";
-dd($json_link);
-$json = file_get_contents($json_link);
-return json_decode($json);
-
-function fetchData($url){
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-    $result = curl_exec($ch);
-    curl_close($ch);
-    return $result;
-}
-
-$result = fetchData("https://api.instagram.com/v1/users/3712762155452978/media/recent/?access_token=IGQVJVOE9yeUhZAYUZAUUEI3QjFFMzV6azJ3dTVZASi1ENWdMU0tlTk1zYlhIN3V1MHQxcXNQYUN2RW5UUGk5NlRiUVFCN0o1azkzUGhVWkcwZA2h3UUwwS01SaVJmaFd2RjN2bFRZAdU5FM0NZAOU03bTk4TwZDZD");
-$result = json_decode($result);
-dd($result);
-foreach ($result->data as $post) {
-    dd($post);
-    // Do something with this data.
-}
-    */?>

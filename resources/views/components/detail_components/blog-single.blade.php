@@ -66,32 +66,37 @@
                     </div>
                     <div id="tg-populartoursslider" class="tg-populartoursslider tg-populartours owl-carousel">
                         @isset($recentPosts)
-                            @foreach($recentPosts as $recent)
+                            @foreach($recentPosts as $post)
                                 <div class="item tg-populartour">
                                     <figure>
-                                        <a href="{{route('post.find',$recent->slug)}}"><img  src="{{$recent->thumbnail}}"
-                                                                  alt="{{$recent->seo_description}}"></a>
+                                        <a href="{{route('post.find',$post->slug)}}"><img
+                                                src="{{$post->thumbnail}}"
+                                                alt="image destinations"></a>
                                     </figure>
                                     <div class="tg-populartourcontent">
                                         <div class="tg-postcontenthead">
                                             <div class="tg-author">
-                                                <a href="javascript:void(0);"><img src="{{$setting['logo']->value}}"
-                                                                                   alt="logo"></a>
+                                                <a href="javascript:void(0);"><img
+                                                        src="{{$setting['logo']->value}}"
+                                                        style="height: 30px;width: 30px"
+                                                        alt="image description"></a>
                                                 <span>{{$setting['site_name']->value}}</span>
                                             </div>
-                                            <time class="tg-date" datetime="12-06-2020">{{$recent->created_at}}</time>
+                                            <time class="tg-date"
+                                                  datetime="12-06-2020">{{\Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->format('d-m-Y')}}</time>
                                         </div>
                                         <br>
                                         <br>
                                         <br>
                                         <div class="tg-populartourtitle">
-                                            <h3><a href="{{route('post.find',$recent->slug)}}">{{$recent->title}}</a></h3>
+                                            <h3><a href="{{route('post.find',$post->slug)}}">{{$post->title}}</a>
+                                            </h3>
                                         </div>
                                         <div class="tg-description">
-                                           {!! substr($recent->content,0,150) !!}..
-                                            <br>
-                                            <a class="tg-btnreadmore" href="{{route('post.find',$recent->slug)}}">Read More</a>
+                                            {!! substr($post->content,0,150) !!}
                                         </div>
+                                        <a class="tg-btnreadmore" href="{{route('post.find',$post->slug)}}">Read
+                                            More</a>
                                     </div>
                                 </div>
                             @endforeach

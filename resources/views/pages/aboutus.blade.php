@@ -2,6 +2,7 @@
     $tourPhotos = \App\Models\Gallery::all();
 $contents = Helper::findCustomData('aboutUsPage');
 $imagesAndContents = Helper::findCustomData('AboutUSMembers');
+ $subscribeDiscount = Helper::findCustomData('subscribeDiscount');
 @endphp
 <!--************************************
 				Inner Banner Start
@@ -111,27 +112,27 @@ $imagesAndContents = Helper::findCustomData('AboutUSMembers');
         @isset($imagesAndContents)
             @foreach($imagesAndContents as $key=>$item)
                 @if($key>1)
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="row">
-                        @isset($item['image'])
-                        <figure
-                            data-vide-bg="poster: {{$item['image']}}"
-                            data-vide-options="position: 0% 50%"
-                        >
-                            <img src="{{substr($imagesAndContents[2]['image'],1)}}" alt="">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="row">
+                            @isset($item['image'])
+                                <figure
+                                    data-vide-bg="poster: {{$item['image']}}"
+                                    data-vide-options="position: 0% 50%"
+                                >
+                                    <img src="{{substr($imagesAndContents[2]['image'],1)}}" alt="">
 
 
-                        </figure>
-                        @endisset
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="row">
-                        <div class="tg-textbox">
-                            @isset($item['content']){!! $item['content'] !!}@endisset
+                                </figure>
+                            @endisset
                         </div>
                     </div>
-                </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="row">
+                            <div class="tg-textbox">
+                                @isset($item['content']){!! $item['content'] !!}@endisset
+                            </div>
+                        </div>
+                    </div>
                 @endif
             @endforeach
         @endisset
@@ -199,55 +200,52 @@ $imagesAndContents = Helper::findCustomData('AboutUSMembers');
     <!--************************************
                 Call To Action Start
         *************************************-->
-    <section
-        class="tg-parallax"
-        data-appear-top-offset="600"
-        data-parallax="scroll"
-        data-image-src="theme/images/parallax/bgparallax-02.jpg"
-    >
-        <div class="tg-sectionspace tg-haslayout">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="tg-calltoaction">
-                            <h2>
-                                Subscribe for our mailing to get latest updates,<br/>
-                                offers and special promotions.
-                            </h2>
-                            <div class="tg-description">
-                                <p>
-                                    Subscribers will get $50 reduction and surprise gifts
-                                    from the first booking with the <b>#TravelSmart</b> gift
-                                    code
-                                </p>
+    @isset($subscribeDiscount)
+        <section
+            class="tg-parallax"
+            data-appear-top-offset="600"
+            data-parallax="scroll"
+            data-image-src="theme/images/parallax/bgparallax-02.jpg"
+        >
+            <div class="tg-sectionspace tg-haslayout">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="tg-calltoaction">
+                                <h2>
+                                    {!! $subscribeDiscount['content'] !!}
+                                </h2>
+                                <div class="tg-description">
+                                    {!! $subscribeDiscount['subContent'] !!}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div
-                        class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4"
-                    >
-                        <form class="tg-formtheme tg-formnewsletter">
-                            <fieldset>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    class="form-control"
-                                    placeholder="Your Email"
-                                />
-                                <button type="submit">
-                                    <img
-                                        src="theme/images/icons/icon-08.png"
-                                        alt="image destinations"
+                        <div
+                            class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-4"
+                        >
+                            <form class="tg-formtheme tg-formnewsletter">
+                                <fieldset>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        class="form-control"
+                                        placeholder="Your Email"
                                     />
-                                </button>
-                            </fieldset>
-                        </form>
+                                    <button type="submit">
+                                        <img
+                                            src="theme/images/icons/icon-08.png"
+                                            alt="image destinations"
+                                        />
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!--************************************
+        </section>
+@endisset
+<!--************************************
                 Call To Action End
         *************************************-->
 </main>
