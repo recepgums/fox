@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <div class="tg-navigationarea tg-headerfixed">
-                    <strong class="tg-logo"><a href="{{url('anasayfa')}}"><img  style="height: 20%;width: 20%" src="{{$setting['logo']->value}}"
+                    <strong class="tg-logo"><a href="{{url('anasayfa')}}"><img  style="" src="{{$setting['logo']->value}}"
                                                                     alt="company logo here"></a></strong>
                     <div class="tg-socialsignin">
                         <ul class="tg-socialicons">
