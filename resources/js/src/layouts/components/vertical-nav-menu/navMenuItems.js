@@ -133,13 +133,13 @@ export default [
         icon: 'FileTextIcon',
         i18n: 'services'
       },
-      {
+     /* {
         url:'/panel/categories',
         slug: '/panel/categories',
         name: 'Categories',
         icon: 'PauseIcon',
         i18n: 'Categories'
-      },
+      },*/
       {
         url:'/panel/forms',
         slug: '/panel/forms',

@@ -40,6 +40,7 @@
                                     <div class="item tg-populartour">
                                         <figure>
                                             <a href="{{route('post.find',$post->slug)}}"><img
+                                                    style="height: 256px;width: 360px"
                                                     src="{{$post->thumbnail}}"
                                                     alt="image destinations"></a>
                                         </figure>

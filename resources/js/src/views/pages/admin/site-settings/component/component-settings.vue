@@ -20,11 +20,11 @@
           </div>
       </vs-tab>
 
-      <vs-tab icon-pack="feather" icon="flag" :label="!isSmallerScreen ? $t('References') : ''">
+     <!-- <vs-tab icon-pack="feather" icon="flag" :label="!isSmallerScreen ? $t('References') : ''">
           <div class="tab-change-pwd md:ml-4 md:mt-10 mt-4 ml-0">
               <References />
           </div>
-      </vs-tab>
+      </vs-tab>-->
 
       <vs-tab icon-pack="feather" icon="flag" :label="!isSmallerScreen ? 'Harita' : ''">
           <div class="tab-change-pwd md:ml-4 md:mt-10 mt-4 ml-0">

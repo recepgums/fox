@@ -126,7 +126,7 @@
     *************************************-->
     @isset($postHomePage)
         <section id="homeBlog" class="tg-parallax" data-appear-top-offset="600" data-parallax="scroll"
-                 data-image-src="images/parallax/bgparallax-01.jpg">
+                 data-image-src="{{asset('theme/images/parallax/bgparallax-01.jpg')}}">
             <div class="tg-sectionspace tg-haslayout">
                 <div class="container">
                     <div class="row">
@@ -142,6 +142,7 @@
                                         <div class="item tg-populartour">
                                             <figure>
                                                 <a href="{{route('post.find',$post->slug)}}"><img
+                                                        style="height: 256px;width: 360px"
                                                         src="{{$post->thumbnail}}"
                                                         alt="image destinations"></a>
                                             </figure>
