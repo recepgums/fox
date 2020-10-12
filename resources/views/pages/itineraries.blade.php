@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 @endif
-                    @if($key%4==1 or $key%4==2)
+                    @if($key%4==1)
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             @if($key%4==1)
                                 <div class="tg-topdestination">
@@ -53,19 +53,18 @@
                                         </figcaption>
                                     </figure>
                                 </div>
-                            @else
                                 <div class="tg-topdestination">
                                     <figure>
-                                        <a href="{{route('service.find',$country->slug)}}" class="tg-btnviewall"
+                                        <a href="{{route('service.find',$countries[$key+1]->slug)}}" class="tg-btnviewall"
                                         >View All Tours</a
                                         >
-                                        <a href="{{route('service.find',$country->slug)}}"
+                                        <a href="{{route('service.find',$countries[$key+1]->slug)}}"
                                         ><img
-                                                src="{{$country->thumbnail}}"
+                                                src="{{$countries[$key+1]->thumbnail}}"
                                                 alt="image description"
                                             /></a>
                                         <figcaption>
-                                            <h2><a href="{{route('service.find',$country->slug)}}">{{$country->title}}</a></h2>
+                                            <h2><a href="{{route('service.find',$countries[$key+1]->slug)}}">{{$countries[$key+1]->title}}</a></h2>
                                         </figcaption>
                                     </figure>
                                 </div>
