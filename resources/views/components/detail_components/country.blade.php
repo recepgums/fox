@@ -23,6 +23,7 @@ $tours = \App\Models\Post::where('type','service')->where('options','like','%"id
                                 </figure>
                             </div>
                         @else
+                            @if(isset($tours[$key+1]->slug))
                             <div class="tg-topdestination">
                                 <figure>
                                     <a href="{{route('tour.find',$tours[$key+1]->slug)}}" class="tg-btnviewall"
@@ -38,6 +39,7 @@ $tours = \App\Models\Post::where('type','service')->where('options','like','%"id
                                     </figcaption>
                                 </figure>
                             </div>
+                                @endif
                         @endif
                     </div>
                 @endforeach
