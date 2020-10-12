@@ -9,6 +9,7 @@ vendor
 .env.backup
 .phpunit.result.cache
 Homestead.json
+.env
 Homestead.yaml
 npm-debug.log
 yarn-error.log
